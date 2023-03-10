@@ -8,6 +8,9 @@ class Env {
     static HOSTNAME = "";
     static PORT = 0;
 
+    /**
+     * Load environment variables
+     */
     static load() {
         dotenv.config();
         Env.APP = process.env.APP;

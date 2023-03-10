@@ -1,5 +1,8 @@
 import * as fs from "fs";
 
+/**
+ * @typedef {Object} ArtistModel
+ */
 class ArtistModel {
     static artists = [];
     static artistsName = [];
@@ -19,6 +22,13 @@ class ArtistModel {
     /** @type {string} */
     image;
 
+    /**
+     * @param {string} name The name of the artist
+     * @param {string} mbid The MusicBrainz ID
+     * @param {string} url The URL to the artist page
+     * @param {string} image_small The URL to the small image
+     * @param {string} image The URL to the large image
+     */
     constructor(name, mbid, url, image_small, image) {
         this.name = name;
         this.mbid = mbid;

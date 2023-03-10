@@ -4,6 +4,17 @@ import LastfmApi from "../helpers/lastfm-api.js";
 
 export default class ArtistController extends Controller {
 
+    /**
+     * Artist search (method=artist.search)
+     *
+     * @param {string} artist - The artist name
+     * @param {number} limit=30 - The number of results to fetch per page.
+     * @param {number} page=1 - The page number to fetch. Defaults to first page.
+     * @param {string} format=json - The format in which to fetch the results.
+     * @param {string} filename=export - The name of the file to export for CSV format.
+     *
+     * @returns {ArtistModel[]}
+     */
     artistSearch() {
         // loading the different input
         // if input is required, it will have no default value
@@ -20,7 +31,7 @@ export default class ArtistController extends Controller {
                 results.push(new ArtistModel(artist.name, artist.mbid, artist.url, artist.image[1]["#text"], artist.image[3]["#text"]));
             }
 
-            if(results.length === 0) {
+            if (results.length === 0) {
                 const randomArtist = ArtistModel.artistsName[Math.floor(Math.random() * ArtistModel.artistsName.length)];
                 LastfmApi.getArtistInfo(randomArtist, limit, page).then(returnIfResults);
             } else {
@@ -40,6 +51,17 @@ export default class ArtistController extends Controller {
         LastfmApi.getArtistInfo(searchArtist, limit, page).then(returnIfResults);
     }
 
+    /**
+     * Artist Local file search (method=artist.search.local)
+     *
+     * @param {string} artist - The artist name
+     * @param {number} limit=30 - The number of results to fetch per page.
+     * @param {number} page=1 - The page number to fetch. Defaults to first page.
+     * @param {string} format=json - The format in which to fetch the results.
+     * @param {string} filename=export - The name of the file to export for CSV format.
+     *
+     * @returns {ArtistModel[]}
+     */
     artistSearchLocal() {
         // loading the different input
         // if input is required, it will have no default value
@@ -56,9 +78,9 @@ export default class ArtistController extends Controller {
             }
         }
 
-        if(results.length === 0) {
+        if (results.length === 0) {
             for (let i = 0; i < 5; i++) {
-                results.push(ArtistModel.artists[[Math.floor(Math.random()*ArtistModel.artists.length)]]);
+                results.push(ArtistModel.artists[[Math.floor(Math.random() * ArtistModel.artists.length)]]);
             }
         }
 
