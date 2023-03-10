@@ -1,4 +1,4 @@
-import Controller from "../../app/class/controller.js"
+import Controller from "../../app/helpers/api-core/controller.js"
 import ArtistModel from "../models/artist.model.js";
 
 export default class ArtistController extends Controller {

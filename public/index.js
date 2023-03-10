@@ -1,6 +1,6 @@
 import http from 'http';
 import ArtistModel from "../app/models/artist.model.js";
-import RequestHandler from '../app/RequestHandler.js';
+import RequestHandler from '../app/helpers/api-core/request-handler.js';
 
 const hostname = '127.0.0.1';
 const port = 3000;
