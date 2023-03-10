@@ -1,6 +1,6 @@
-import methods from './methods.js';
-import Controller from "./class/controller.js";
-import Stop from "./class/stop.js";
+import methods from '../../methods.js';
+import Controller from "./controller.js";
+import Stop from "./stop.js";
 
 class RequestHandler {
     methods = {
@@ -43,6 +43,7 @@ class RequestHandler {
             this.getInputs(request);
             this.url = request.url;
             const controller = this.methods[this.httpMethod][this.getRequestedMethod()];
+
             if (controller) {
                 const instance = new controller[0](request, response, this.inputs);
                 console.log(this.httpMethod + " " + controller[0].name + "@" + controller[1] + " " + JSON.stringify(this.inputs));
@@ -56,7 +57,6 @@ class RequestHandler {
             } else {
                 console.error(e);
             }
-            // new Controller(request, response).error(500, "Internal server error");
         }
     }
 }
