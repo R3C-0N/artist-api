@@ -4,6 +4,7 @@ const methods = {
     // Here are registered the different methods
     "GET" :{
         "artist.search": [ArtistController, "artistSearch"],
+        "artist.search.local": [ArtistController, "artistSearchLocal"],
     },
     "POST" :{
     },
