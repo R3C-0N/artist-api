@@ -4,7 +4,7 @@
   "description": "Small NodeJS API for artists",
   "main": "public/index.js",
   "scripts": {
-    "start": "node public/index.js",
+    "start": "node --no-warnings public/index.js",
     "dev": "nodemon public/index.js",
     "update": "npm install"
   },
@@ -14,5 +14,8 @@
   "type": "module",
   "devDependencies": {
     "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
   }
 }
