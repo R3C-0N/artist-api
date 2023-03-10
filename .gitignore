@@ -127,3 +127,8 @@ dist
 
 # IntelliJ IDEA
 .idea
+
+# changelog generator
+vendor/
+composer.json
+composer.lock
