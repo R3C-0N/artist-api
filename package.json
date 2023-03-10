@@ -2,17 +2,17 @@
   "name": "artist-api",
   "version": "1.0.0",
   "description": "Small NodeJS API for artists",
-  "main": "index.js",
+  "main": "public/index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "update": "npm install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node public/index.js",
+    "dev": "nodemon public/index.js",
+    "update": "npm install"
   },
   "keywords": [],
   "author": "Mathis Medard",
   "license": "ISC",
-  "dependencies": {
+  "type": "module",
+  "devDependencies": {
     "nodemon": "^2.0.21"
   }
 }
