@@ -7,6 +7,8 @@
 This is a simple API to get informations about artists based on the following
 endpoint [artist.search](https://www.last.fm/api/show/artist.search)
 
+In order to keep it as simple as possible, I also decided not to use classic dependencies such as express.
+
 ## Installation
 
 ```bash
